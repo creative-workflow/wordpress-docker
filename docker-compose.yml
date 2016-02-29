@@ -1,3 +1,14 @@
+db:
+  image: orchardup/mysql
+  environment:
+    MYSQL_DATABASE: wordpress
+  ports:
+    - "3306:3306"
+  volumes:
+    - ./data/db/data:/tmp/mysql
+    - ./data/db/config:/etc/mysql/conf.d
+    - ./data/db/logs:/var/log/mysql
+
 web:
   build: .
   command: php -S 0.0.0.0:9999 -t /code
@@ -7,9 +18,3 @@ web:
     - ./wordpress:/code
   links:
     - db
-db:
-  image: orchardup/mysql
-  environment:
-    MYSQL_DATABASE: wordpress
-  ports:
-    - "3306:3306"
