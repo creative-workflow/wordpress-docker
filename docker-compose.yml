@@ -1,0 +1,15 @@
+web:
+  build: .
+  command: php -S 0.0.0.0:9999 -t /code
+  ports:
+    - "9999:9999"
+  volumes:
+    - ./wordpress:/code
+  links:
+    - db
+db:
+  image: orchardup/mysql
+  environment:
+    MYSQL_DATABASE: wordpress
+  ports:
+    - "3306:3306"
