@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 
-IP=$(docker-machine ip default)
-echo "running wordpress on $IP:9999"
+
+if which docker-machine >/dev/null; then
+  IP=$(docker-machine ip default)
+else
+  IP=$(hostname --ip-address)
+fi
+
+echo ''
+echo " -> starting wordpress web container on: $IP:9999"
+echo ''
 
 docker-compose up

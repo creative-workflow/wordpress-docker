@@ -1,10 +1,9 @@
 parentdir="$(basename "$(pwd)")"
 
-container_name="$parentdir" | tr -d '-' | tr -d '_'
-echo $container_name
+container_context=${parentdir//[-_]/}
 
 container_suffix='_db_1'
-container_name="$container_name$container_suffix"
+container_name="$container_context$container_suffix"
 
-
-docker exec $container_name mysqldump > /tmp/mysql/dump.sql
+database_name='wordpress'
+docker exec -d $container_name bash -c "mysqldump $database_name > /tmp/mysql/dump.sql"

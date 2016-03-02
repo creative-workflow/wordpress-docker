@@ -5,9 +5,7 @@ db:
   ports:
     - "3306:3306"
   volumes:
-    - ./data/db/data:/tmp/mysql
-    - ./data/db/config:/etc/mysql/conf.d
-    - ./data/db/logs:/var/log/mysql
+    - ./data/db:/tmp/mysql
 
 web:
   build: .
