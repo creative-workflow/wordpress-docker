@@ -8,6 +8,7 @@ db:
     - "3306:3306"
   volumes:
     - ./data/db:/tmp/mysql
+    - ./data/db/logs:/var/log/mysql
 
 php:
   build: ./data/php
