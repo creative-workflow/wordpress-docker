@@ -17,7 +17,7 @@ You have to install:
 ``./scripts/setup.sh``
 
 ### 3.1 If you Use Docker Toolbox (OSX, Windows)
-Launch a Docker Toolbox terminal or on OSX terminal type ``"/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh"``
+Launch a Docker Toolbox terminal or on OSX terminal type ``eval "$(docker-machine env default)"``
 
 ### 4. start the docker containers for your project
 ``./scripts/run.sh``
