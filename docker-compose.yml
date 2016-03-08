@@ -1,18 +1,33 @@
 db:
-  image: orchardup/mysql
+  image: mysql/mysql-server
   environment:
     MYSQL_DATABASE: wordpress
+    MYSQL_USER: root
+    MYSQL_ROOT_PASSWORD: wordpress
   ports:
     - "3306:3306"
   volumes:
     - ./data/db:/tmp/mysql
 
-web:
-  build: .
-  command: php -S 0.0.0.0:9999 -t /code
-  ports:
-    - "9999:9999"
-  volumes:
-    - ./wordpress:/code
+php:
+  build: ./data/php
   links:
     - db
+  ports:
+    - "9000:9000"
+  volumes:
+    - ./data/php/php.ini:/usr/local/etc/php/php.ini
+    - ./data/php/logs:/usr/local/var/log
+    - ./wordpress:/var/www/html
+
+web:
+  image: nginx
+  volumes:
+    - ./data/nginx/nginx.conf:/etc/nginx/nginx.conf
+    - ./data/nginx/sites-enabled:/etc/nginx/sites-enabled
+    - ./data/nginx/logs:/var/log/nginx
+    - ./wordpress:/var/www/html
+  ports:
+    - "9999:80"
+  links:
+    - php

@@ -1,6 +1,6 @@
 if [ -z "$1" ]
   then
-    echo "No argument supplied. Available: db, web"
+    echo "No argument supplied. Available: db, web, php"
     exit 1
 fi
 which_container=$1

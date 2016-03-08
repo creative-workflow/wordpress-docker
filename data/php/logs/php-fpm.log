@@ -1,0 +1,12 @@
+[07-Mar-2016 19:17:28] ERROR: No pool defined. at least one pool section must be specified in config file
+[07-Mar-2016 19:17:28] ERROR: failed to post process the configuration
+[07-Mar-2016 19:17:28] ERROR: FPM initialization failed
+[07-Mar-2016 19:23:23] ERROR: No pool defined. at least one pool section must be specified in config file
+[07-Mar-2016 19:23:23] ERROR: failed to post process the configuration
+[07-Mar-2016 19:23:23] ERROR: FPM initialization failed
+[07-Mar-2016 19:24:26] ERROR: No pool defined. at least one pool section must be specified in config file
+[07-Mar-2016 19:24:26] ERROR: failed to post process the configuration
+[07-Mar-2016 19:24:26] ERROR: FPM initialization failed
+[07-Mar-2016 19:25:02] ERROR: No pool defined. at least one pool section must be specified in config file
+[07-Mar-2016 19:25:02] ERROR: failed to post process the configuration
+[07-Mar-2016 19:25:02] ERROR: FPM initialization failed
