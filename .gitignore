@@ -1,5 +1,2 @@
 wordpress
-data/nginx/logs
-data/php/logs
-data/db/logs
 .DS_Store

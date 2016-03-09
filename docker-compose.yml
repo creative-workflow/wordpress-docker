@@ -8,7 +8,6 @@ db:
     - "3306:3306"
   volumes:
     - ./data/db:/tmp/mysql
-    - ./data/db/logs:/var/log/mysql
 
 php:
   build: ./data/php
@@ -18,7 +17,6 @@ php:
     - "9000:9000"
   volumes:
     - ./data/php/php.ini:/usr/local/etc/php/php.ini
-    - ./data/php/logs:/usr/local/var/log
     - ./wordpress:/var/www/html
 
 web:
@@ -26,7 +24,6 @@ web:
   volumes:
     - ./data/nginx/nginx.conf:/etc/nginx/nginx.conf
     - ./data/nginx/sites-enabled:/etc/nginx/sites-enabled
-    - ./data/nginx/logs:/var/log/nginx
     - ./wordpress:/var/www/html
   ports:
     - "9999:80"

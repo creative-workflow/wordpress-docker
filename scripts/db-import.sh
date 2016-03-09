@@ -1,7 +1,5 @@
-parentdir="$(basename "$(pwd)")"
-
-container_context=${parentdir//[-_]/}
-container_name=$container_context"_db_1"
+#!/usr/bin/env bash
 
 database_name='wordpress'
-docker exec -d $container_name bash -c "mysql -uroot -pwordpress $database_name < /tmp/mysql/dump.sql"
+
+docker-compose run db "mysql -uroot -pwordpress $database_name < /tmp/mysql/dump.sql"
