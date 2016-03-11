@@ -31,24 +31,28 @@ Note: *Before the containers start an info will be printed containing the ip whe
  -> starting wordpress web container on: 192.168.99.100:9999
  ```
 
- Now follow the wordpress setup guide. Note: *In the terminal where you started the docker machines you can see the request sent from your browser.*
+ Now follow the wordpress setup guide if you dont want to use browser-sync. Note: *In the terminal where you started the docker machines you can see the request sent from your browser.*
 
  Note: *With Ctrl+C you can stop the docker container in the terminal.*
 
 #### 5. if you want to use browser-sync
 Open a new terminal inside your project folder and run as first ``npm install -g gulp`` and then ``npm install``. Note: *If you have access errors prepend the command with ``sudo``.*
 
-Now you can start browser-sync by typing ``gulp serve``. This will open your standard browser with the browser-sync page.
+Now you can start browser-sync by typing ``gulp serve``. This will open your standard browser with your wordpress page.
+
+Now follow the wordpress setup guide.
+
+Note: *With Ctrl+C you can stop browser-sync in the terminal.*
+
+##### using browser-sync
 
 If you now edit e.g. the style.css in ``my-wp-project/wordpress/wp-content/themes/twentysixteen`` your browser refreshes automatically.
 
 The browser-sync user interface is accessible via ``localhost:3002``.
 
-Note: *With Ctrl+C you can stop browser-sync in the terminal.*
+##### change the watched wordpress theme
 
-##### change the watched theme
-
-If you want to watch an other or your own custom wordpress theme, change the settings in ``my-wp-project/gulp/config.yml``.
+If you want to watch another or your own custom wordpress theme, change the settings in ``my-wp-project/gulp/config.yml`` and restart with ``gulp serve``.
 
 ## manage database
 You can share a database dump within your repo, so you can sync development with your team mates.
