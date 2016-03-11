@@ -26,6 +26,19 @@ web:
     - ./data/nginx/sites-enabled:/etc/nginx/sites-enabled
     - ./wordpress:/var/www/html
   ports:
-    - "9999:80"
+    - "9998:80"
   links:
     - php
+
+browsersync:
+  build: ./data/browsersync
+  volumes:
+    - ./wordpress:/var/www/html:rw
+  ports:
+    - "9999:3000"
+    - "9997:3001"
+    - "9995:9995"
+  links:
+    - web
+  environment:
+    - WORDPRESS_THEME=twentysixteen

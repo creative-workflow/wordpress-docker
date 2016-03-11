@@ -27,6 +27,9 @@ define('DB_HOST', "db:3306");
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
+define('WP_DEFAULT_THEME', 'cw-basic-theme');
+
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *

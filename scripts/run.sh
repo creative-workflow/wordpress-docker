@@ -8,7 +8,9 @@ else
 fi
 
 echo ''
-echo " -> starting wordpress web container on: $IP:9999"
+echo " -> starting wordpress web container on: $IP:9998"
+echo " -> starting browsersync proxy container on: $IP:9999"
+echo " -> starting browsersync UI on: $IP:9997"
 echo ''
 
 docker-compose up

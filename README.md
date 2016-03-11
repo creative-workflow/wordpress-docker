@@ -30,14 +30,14 @@ You can share a database dump within your repo, so you can sync development with
 ``./scripts/db-import.sh``
 
 ## manage container
-#### start web, db and php container
+#### start web, db, php and browsersync container
 ``./scripts/run.sh`` Note: at the first line ip and port for web container access will be printed.
 
 #### login to a container
-``docker-compose run web bash`` Note: web, db and php are available.
+``docker-compose run web bash`` Note: web, db, php and browsersync are available.
 
 #### container log files
-``docker-compose logs web`` Note: web, db and php are available.
+``docker-compose logs web`` Note: web, db, php and browsersync are available.
 
 #### delete all containers
 Attention: your database will be removed, ensure you dumped it(see above).
@@ -46,16 +46,18 @@ Attention: your database will be removed, ensure you dumped it(see above).
 ## livereload, browsersync, sass and coffee
 Reloads your browser on code changes and compiles sass to css and coffee to javascript. [Read more](https://www.browsersync.io/).
 
-#### prerequisites
-Please install [npm](http://blog.npmjs.org/post/85484771375/how-to-install-npm) and [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md).
+It runs in its own container. Look on to the terminal output to get its ipadress.
 
-#### using it
-Start your containers with ``./scripts/run.sh``.
+If you want to change its behaviour edit the ``gulpfile.js`` in side of the folder ``./wordpress``. The gulpfile.js will be copied when you run ``./scripts/init-wordpress``.
 
-In a second terminal install dependencies with ``npm install``.
+#### adding and running gulp tasks
+You can add your custom gulp tasks to the file ``./wordpress/gulpfile.js``.
 
-Finally run ``gulp serve`` and navigate your browser to the address printed in the terminal.
+To execute your custom gulp task run ``docker-compose run browsersync gulp my-custom-task``
 
+Read mor about [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/API.md).
 
-## TODO
-  * add bach scripts for window users
+## TODOs
+  * add batch scripts for window users
+  * test on linux and windows
+  * add instruction for cw-basic-theme
