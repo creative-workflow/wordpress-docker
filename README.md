@@ -1,8 +1,11 @@
 # CW-Wordpress Development Setup
 
 ## prerequisites
-Please install [Docker](https://docs.docker.com/engine/installation/)
-and  [GIT](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+Please install
+  * [Docker](https://docs.docker.com/engine/installation)
+  * [GIT](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+  * [nodeJs](https://nodejs.org) (if you want to use browser-sync or gulp)
+
 
 ## wordpress up and running in 20 seconds
 
@@ -16,10 +19,19 @@ and  [GIT](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 ``./scripts/init-wordpress.sh`` Note: this script needs you to have curl installed.
 
 #### 3.1 If you Use Docker Toolbox  on OSX or Windows
-Launch a Docker Toolbox terminal by typing ``eval "$(docker-machine env default)"``
+Start the default docker VM ``docker-machine start default``.
+
+Launch a Docker Toolbox terminal by typing ``eval "$(docker-machine env default)"``.
 
 #### 4. start the web, db and php container
 ``./scripts/run.sh`` Note: at the first line ip and port for web container access will be printed.
+
+You can access your wordpress installation via ``localhost:9998``.
+
+#### 5. if you want to use browser-sync
+You have t run ``npm install`` inside of your project folder.
+
+After this you can serve your wordpress installation with browsersync via ``localhost:9999``
 
 ## manage database
 You can share a database dump within your repo, so you can sync development with your team mates.
@@ -46,14 +58,10 @@ Attention: your database will be removed, ensure you dumped it(see above).
 ## livereload, browsersync, sass and coffee
 Reloads your browser on code changes and compiles sass to css and coffee to javascript. [Read more](https://www.browsersync.io/).
 
-It runs in its own container. Look on to the terminal output to get its ipadress.
-
-If you want to change its behaviour edit the ``gulpfile.js`` in side of the folder ``./wordpress``. The gulpfile.js will be copied when you run ``./scripts/init-wordpress``.
+It have to run on your local machine because of filesystem event issues.
 
 #### adding and running gulp tasks
-You can add your custom gulp tasks to the file ``./wordpress/gulpfile.js``.
-
-To execute your custom gulp task run ``docker-compose run browsersync gulp my-custom-task``
+You can add your custom gulp tasks to the files in the folder ``./gulp/*``.
 
 Read mor about [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/API.md).
 

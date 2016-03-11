@@ -7,38 +7,25 @@ db:
   ports:
     - "3306:3306"
   volumes:
-    - ./data/db:/tmp/mysql
+    - ./docker/db:/tmp/mysql
 
 php:
-  build: ./data/php
+  build: ./docker/php
   links:
     - db
   ports:
     - "9000:9000"
   volumes:
-    - ./data/php/php.ini:/usr/local/etc/php/php.ini
+    - ./docker/php/php.ini:/usr/local/etc/php/php.ini
     - ./wordpress:/var/www/html
 
 web:
   image: nginx
   volumes:
-    - ./data/nginx/nginx.conf:/etc/nginx/nginx.conf
-    - ./data/nginx/sites-enabled:/etc/nginx/sites-enabled
+    - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+    - ./docker/nginx/sites-enabled:/etc/nginx/sites-enabled
     - ./wordpress:/var/www/html
   ports:
-    - "9998:80"
+    - "9999:80"
   links:
     - php
-
-browsersync:
-  build: ./data/browsersync
-  volumes:
-    - ./wordpress:/var/www/html:rw
-  ports:
-    - "9999:3000"
-    - "9997:3001"
-    - "9995:9995"
-  links:
-    - web
-  environment:
-    - WORDPRESS_THEME=twentysixteen

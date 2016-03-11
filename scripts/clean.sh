@@ -2,9 +2,9 @@
 
 echo 'dont forget to export your database with "./scripts/db-export"'
 
-CONTAINERS=(db web php browsersync)
+CONTAINERS=(db web php)
 for name in ${CONTAINERS[@]}; do
-  echo "destroying $name container"
+  echo ''
   docker-compose stop $name
   docker-compose rm $name
 done
