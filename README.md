@@ -25,7 +25,7 @@ Launch a Docker Toolbox terminal by typing ``eval "$(docker-machine env default)
 #### 4. start the web, db and php container
 ``./scripts/run.sh``
 
-Note: *Before the containers start an info will be printed containing the ip where can access your wordpress installation. E.g.*
+Note: *At the beginning an info will be printed containing the ip where you can access your wordpress installation. E.g.*
 
 ```
  -> starting wordpress web container on: 192.168.99.100:9999
