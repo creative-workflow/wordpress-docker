@@ -15,7 +15,7 @@
 ``git clone --branch=master ssh://git@gitlab.creative-workflow.org:2222/cw-wordpress/cw-wordpress-docker.git . && rm -rf ./.git*``
 
 #### 3. download a fresh wordpress copy and copy our specific wp-config.php
-``./scripts/init-wordpress.sh`` Note: for this script you need to have [curl](https://curl.haxx.se/) installed.
+``./scripts/init-wordpress.sh`` Note: *For this script you need to have [curl](https://curl.haxx.se/) installed.*
 
 #### 3.1 If you Use Docker Toolbox  on OSX or Windows
 Start the default docker VM ``docker-machine start default``.
@@ -25,30 +25,30 @@ Launch a Docker Toolbox terminal by typing ``eval "$(docker-machine env default)
 #### 4. start the web, db and php container
 ``./scripts/run.sh``
 
-Note: before the containers start an info will be printed containing the ip where can access your wordpress installation. E.g.
+Note: *Before the containers start an info will be printed containing the ip where can access your wordpress installation. E.g.*
 
 ```
  -> starting wordpress web container on: 192.168.99.100:9999
  ```
 
- Now follow the wordpress setup guide. Note: in the terminal where you started the docker machines you can see the request sent from your browser.
+ Now follow the wordpress setup guide. Note: *In the terminal where you started the docker machines you can see the request sent from your browser.*
 
- Note with Ctrl+C you can stop the docker container in the terminal.
+ Note: *With Ctrl+C you can stop the docker container in the terminal.*
 
 #### 5. if you want to use browser-sync
-Open a new terminal inside your project folder and run as first ``npm install -g gulp`` and then ``npm install``. Note: if you have access errors prepend the command with sudo.
+Open a new terminal inside your project folder and run as first ``npm install -g gulp`` and then ``npm install``. Note: *If you have access errors prepend the command with ``sudo``.*
 
-Now you can start browser-sync by typing ``gulp serve``
+Now you can start browser-sync by typing ``gulp serve``. This will open your standard browser with the browser-sync page.
 
-After this you can serve your wordpress installation with browsersync via ``localhost:3000``. You standard browser will open automatically.
+If you now edit e.g. the style.css in ``my-wp-project/wordpress/wp-content/themes/twentysixteen`` your browser refreshes automatically.
 
-If you now edit the style.css in ``my-wp-project/wordpress/wp-content/themes/twentysixteen`` your browser refreshes automatically.
+The browser-sync user interface is accessible via ``localhost:3002``.
 
-The browser-synn user interface is accessible via ``localhost:3002``.
+Note: *With Ctrl+C you can stop browser-sync in the terminal.*
+
+##### change the watched theme
 
 If you want to watch an other or your own custom wordpress theme, change the settings in ``my-wp-project/gulp/config.yml``.
-
-Note with Ctrl+C you can stop browser-sync in the terminal.
 
 ## manage database
 You can share a database dump within your repo, so you can sync development with your team mates.
@@ -60,13 +60,13 @@ You can share a database dump within your repo, so you can sync development with
 
 ## manage container
 #### start web, db, php and browsersync container
-``./scripts/run.sh`` Note: at the first line ip and port for web container access will be printed.
+``./scripts/run.sh`` Note: *At the first line ip and port for web container access will be printed.*
 
 #### login to a container
-``docker-compose run web bash`` Note: web, db, php and browsersync are available.
+``docker-compose run web bash`` Note: *Web, db, php and browsersync are available.*
 
 #### container log files
-``docker-compose logs web`` Note: web, db, php and browsersync are available.
+``docker-compose logs web`` Note: *Web, db, php and browsersync are available.*
 
 #### delete all containers
 Attention: your database will be removed, ensure you dumped it(see above).
@@ -80,7 +80,7 @@ It have to run on your local machine because of filesystem event issues.
 #### adding and running gulp tasks
 You can add your custom gulp tasks to the files in the folder ``./gulp/*``.
 
-Read mor about [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/API.md).
+Read more about [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/API.md).
 
 ## TODOs
   * add batch scripts for window users
