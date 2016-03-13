@@ -96,15 +96,16 @@ Attention: your database will be removed, ensure you dumped it(see above).
 ``./scripts/clean.sh``
 <br><br>
 
-## livereload, browsersync, sass and coffee
+## Livereload, Browsersync, Sass and Coffee
 Reloads your browser on code changes and compiles sass to css and coffee to javascript. [Read more](https://www.browsersync.io/).
 
-It have to run on your local machine because of filesystem event issues.
+It has to run on your local machine because of filesystem event issues.
 
 #### adding and running gulp tasks
 You can add your custom gulp tasks to the files in the folder ``./gulp/*``.
 
-Read more about [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/API.md).
+Read more about [gulp](https://github.com/gulpjs/gulp/blob/master/docs/API.md).
+<br><br>
 
 ## TODOs
   * add batch scripts for window users
