@@ -43,8 +43,9 @@ Note: *In the terminal where you started the docker machine you can see the requ
 Note: *With ctrl+c you can stop the docker container in the terminal.*
 <br><br>
 
-#### 5. if you want to use browser-sync
+#### 5. If you want to use browser-sync
 Open a new terminal inside your project folder and run as first ``npm install -g gulp`` and then ``npm install``. 
+<br>
 Note: *If you have access errors prepend the command with ``sudo``.*
 
 Now you can start browser-sync by typing ``gulp serve``. This will open your standard browser with your wordpress page.
