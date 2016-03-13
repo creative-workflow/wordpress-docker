@@ -8,18 +8,19 @@
 <br>
 <br>
 
-
 ## Wordpress running in 20 seconds
 
 #### 1. Create a folder for your new wordpress project
 ``mkdir my-wp-project && cd my-wp-project``
+<br>
 
-
-#### 2. copy source files from this repo
+#### 2. Copy source files from this repo
 ``git clone --branch=master ssh://git@gitlab.creative-workflow.org:2222/cw-wordpress/cw-wordpress-docker.git . && rm -rf ./.git*``
+<br>
 
-#### 3. download a fresh wordpress copy and copy our specific wp-config.php
+#### 3. Download a fresh wordpress copy and copy our specific wp-config.php
 ``./scripts/init-wordpress.sh`` Note: *For this script you need to have [curl](https://curl.haxx.se/) installed.*
+<br>
 
 #### 3.1 If you Use Docker Toolbox  on OSX or Windows
 Start the default docker VM ``docker-machine start default``.
