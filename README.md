@@ -26,21 +26,25 @@ Note: *For this script you need to have [curl](https://curl.haxx.se/) installed.
 Start the default docker VM ``docker-machine start default``.
 <br>
 
-Launch a Docker Toolbox terminal by typing ``eval "$(docker-machine env default)"``.
+Launch a Docker Toolbox terminal ``eval "$(docker-machine env default)"``.
 <br><br>
 
 #### 4. start the web, db and php container
 ``./scripts/run.sh``
-
+<br>
 Note: *At the beginning an info will be printed containing the ip where you can access your wordpress installation. E.g.*
-
+<br><br>
 ```
  -> starting wordpress web container on: 192.168.99.100:9999
  ```
+<br><br>
 
- Now follow the wordpress setup guide if you **don't want to use browser-sync**. Note: *In the terminal where you started the docker machines you can see the request sent from your browser.*
-
- Note: *With Ctrl+C you can stop the docker container in the terminal.*
+Now follow the wordpress setup guide if you **don't want to use browser-sync**. 
+<br>
+Note: *In the terminal where you started the docker machines you can see the request sent from your browser.*
+<br>
+Note: *With Ctrl+C you can stop the docker container in the terminal.*
+<br><br>
 
 #### 5. if you want to use browser-sync
 Open a new terminal inside your project folder and run as first ``npm install -g gulp`` and then ``npm install``. Note: *If you have access errors prepend the command with ``sudo``.*
