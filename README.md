@@ -54,15 +54,16 @@ Follow the wordpress setup guide.
 <br>
 Note: *With Ctrl+C you can stop browser-sync in the terminal.*
 
-##### using browser-sync
+##### Using browser-sync
 
-If you now edit e.g. the style.css in ``my-wp-project/wordpress/wp-content/themes/twentysixteen`` your browser refreshes automatically.
+If you edit e.g. the style.css in ``my-wp-project/wordpress/wp-content/themes/twentysixteen`` your browser refreshes automatically.
 
 The browser-sync user interface is accessible via ``localhost:3002``.
 
-##### change the watched wordpress theme
+##### Change the watched wordpress theme
 
 If you want to watch another or your own custom wordpress theme, change the settings in ``my-wp-project/gulp/config.yml`` and restart with ``gulp serve``.
+<br><br>
 
 ## manage database
 You can share a database dump within your repo, so you can sync development with your team mates.
