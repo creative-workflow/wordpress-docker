@@ -18,14 +18,16 @@
 <br><br>
 
 #### 3. Download a fresh wordpress copy and copy our specific wp-config.php
-``./scripts/init-wordpress.sh`` Note: *For this script you need to have [curl](https://curl.haxx.se/) installed.*
+``./scripts/init-wordpress.sh`` 
+<br>
+Note: *For this script you need to have [curl](https://curl.haxx.se/) installed.*
+
+##### 3.1 If you Use Docker Toolbox  on OSX or Windows
+Start the default docker VM ``docker-machine start default``.
 <br>
 
-#### 3.1 If you Use Docker Toolbox  on OSX or Windows
-Start the default docker VM ``docker-machine start default``.
-<br><br>
-
 Launch a Docker Toolbox terminal by typing ``eval "$(docker-machine env default)"``.
+<br><br>
 
 #### 4. start the web, db and php container
 ``./scripts/run.sh``
