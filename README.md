@@ -21,8 +21,10 @@
 ``./scripts/init-wordpress.sh`` Note: *For this script you need to have [curl](https://curl.haxx.se/) installed.*
 <br><br>
 
-:#### 3.1 If you Use Docker Toolbox  on OSX or Windows
+<blockquote>
+#### 3.1 If you Use Docker Toolbox  on OSX or Windows
 Start the default docker VM ``docker-machine start default``.
+</blockquote>
 
 Launch a Docker Toolbox terminal by typing ``eval "$(docker-machine env default)"``.
 
