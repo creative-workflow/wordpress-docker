@@ -1,4 +1,5 @@
 # CW - Wordpress Development Setup
+<br>
 
 ## Install the following dependencies
   * [Docker](https://docs.docker.com/engine/installation)
