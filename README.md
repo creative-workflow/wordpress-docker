@@ -5,6 +5,7 @@
   * [GIT](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
   * [nodeJs](https://nodejs.org) (if you want to use browser-sync or gulp
 {{break}}
+{{break}}
 
 ## Wordpress running in 20 seconds
 
