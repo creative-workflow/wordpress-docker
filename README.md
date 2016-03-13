@@ -27,7 +27,7 @@ Start the default docker VM ``docker-machine start default``.
 Launch a Docker Toolbox terminal ``eval "$(docker-machine env default)"``.
 <br><br>
 
-#### 4. start the web, db and php container
+#### 4. Start the web, db and php container
 ``./scripts/run.sh``
 <br>
 Note: *At the beginning an info will be printed containing the ip where you can access your wordpress installation. E.g.*
@@ -38,13 +38,14 @@ Note: *At the beginning an info will be printed containing the ip where you can 
 <br>
 Now follow the wordpress setup guide if you **don't want to use browser-sync**. 
 <br><br>
-Note: *In the terminal where you started the docker machines you can see the requests sent from your browser.*
+Note: *In the terminal where you started the docker machine you can see the requests sent from your browser.*
 <br>
 Note: *With ctrl+c you can stop the docker container in the terminal.*
 <br><br>
 
 #### 5. if you want to use browser-sync
-Open a new terminal inside your project folder and run as first ``npm install -g gulp`` and then ``npm install``. Note: *If you have access errors prepend the command with ``sudo``.*
+Open a new terminal inside your project folder and run as first ``npm install -g gulp`` and then ``npm install``. 
+Note: *If you have access errors prepend the command with ``sudo``.*
 
 Now you can start browser-sync by typing ``gulp serve``. This will open your standard browser with your wordpress page.
 
