@@ -6,7 +6,7 @@
   * [nodeJs](https://nodejs.org) (if you want to use browser-sync or gulp)
 
 
-## wordpress up and running in 20 seconds
+## Wordpress running in 20 seconds
 
 #### 1. create a folder for your new wordpress project
 ``mkdir my-wp-project && cd my-wp-project``
