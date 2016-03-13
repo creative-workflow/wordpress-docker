@@ -8,8 +8,9 @@
 
 ## Wordpress running in 20 seconds
 
-#### 1. create a folder for your new wordpress project
+#### 1. Create a folder for your new wordpress project
 ``mkdir my-wp-project && cd my-wp-project``
+
 
 #### 2. copy source files from this repo
 ``git clone --branch=master ssh://git@gitlab.creative-workflow.org:2222/cw-wordpress/cw-wordpress-docker.git . && rm -rf ./.git*``
