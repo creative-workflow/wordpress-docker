@@ -50,8 +50,8 @@ Note: *If you have access errors prepend the command with ``sudo``.*
 
 Now you can start browser-sync by typing ``gulp serve``. This will open your standard browser with your wordpress page.
 
-Now follow the wordpress setup guide.
-
+Follow the wordpress setup guide.
+<br>
 Note: *With Ctrl+C you can stop browser-sync in the terminal.*
 
 ##### using browser-sync
