@@ -65,27 +65,36 @@ The browser-sync user interface is accessible via ``localhost:3002``.
 If you want to watch another or your own custom wordpress theme, change the settings in ``my-wp-project/gulp/config.yml`` and restart with ``gulp serve``.
 <br><br>
 
-## manage database
+## Manage database
 You can share a database dump within your repo, so you can sync development with your team mates.
 #### export your database to ./data/db/dump.sql
 ``./scripts/db-export.sh``
 
 #### import data from ./data/db/dump.sql
 ``./scripts/db-import.sh``
+<br><br>
 
-## manage container
+## Manage container
 #### start web, db, php and browsersync container
-``./scripts/run.sh`` Note: *At the first line ip and port for web container access will be printed.*
+``./scripts/run.sh`` 
+<br>
+Note: *At the first line ip and port for web container access will be printed.*
 
 #### login to a container
-``docker-compose run web bash`` Note: *Web, db, php and browsersync are available.*
+``docker-compose run web bash`` 
+<br>
+Note: *Web, db, php and browsersync are available.*
 
 #### container log files
-``docker-compose logs web`` Note: *Web, db, php and browsersync are available.*
+``docker-compose logs web`` 
+<br>
+Note: *Web, db, php and browsersync are available.*
 
 #### delete all containers
 Attention: your database will be removed, ensure you dumped it(see above).
+
 ``./scripts/clean.sh``
+<br><br>
 
 ## livereload, browsersync, sass and coffee
 Reloads your browser on code changes and compiles sass to css and coffee to javascript. [Read more](https://www.browsersync.io/).
