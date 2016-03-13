@@ -36,9 +36,8 @@ Note: *At the beginning an info will be printed containing the ip where you can 
  -> starting wordpress web container on: 192.168.99.100:9999
  ```
 <br><br>
-
 Now follow the wordpress setup guide if you **don't want to use browser-sync**. 
-<br>
+<br><br>
 Note: *In the terminal where you started the docker machines you can see the request sent from your browser.*
 <br>
 Note: *With Ctrl+C you can stop the docker container in the terminal.*
