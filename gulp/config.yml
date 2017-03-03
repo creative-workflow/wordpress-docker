@@ -4,7 +4,7 @@ browsersync:
   open: "external"
   notify: true
   proxy:
-    target: 'DOCKER_IP:9999'
+    target: '0.0.0.0:9999'
     ws: true
   ui:
     port: 3001
