@@ -22,14 +22,15 @@
 /** The name of the database for WordPress */
 define('DB_NAME', 'wordpress');
 define('DB_USER', 'root');
-define('DB_PASSWORD', 'wordpress');
-define('DB_HOST', "db:3306");
+define('DB_PASSWORD', '');
+define('DB_HOST', 'db');
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
 # define('WP_DEFAULT_THEME', 'cw-basic-theme');
-# define('WP_SITEURL', 'http://'.$_SERVER['SERVER_NAME'].( $_SERVER['SERVER_PORT'] != 80 ? ':'.$_SERVER['SERVER_PORT'] : ''));
-# define('WP_HOME', WP_SITEURL);
+
+define('WP_SITEURL', 'http://'.$_SERVER['HTTP_HOST'].( $_SERVER['SERVER_PORT'] != 80 ? ':'.$_SERVER['SERVER_PORT'] : ''));
+define('WP_HOME', WP_SITEURL);
 
 /**#@+
  * Authentication Unique Keys and Salts.

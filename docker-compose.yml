@@ -1,31 +1,52 @@
-db:
-  image: mysql/mysql-server
-  environment:
-    MYSQL_DATABASE: wordpress
-    MYSQL_USER: root
-    MYSQL_ROOT_PASSWORD: wordpress
-  ports:
-    - "3306:3306"
-  volumes:
-    - ./docker/db:/tmp/mysql
+version: "2"
 
-php:
-  build: ./docker/php
-  links:
-    - db
-  ports:
-    - "9000:9000"
-  volumes:
-    - ./docker/php/php.ini:/usr/local/etc/php/php.ini
-    - ./wordpress:/var/www/html
+services:
+  db:
+    image: mariadb:10.1
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=wordpress
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker/db:/tmp/mysql
+      - db_files:/var/lib/mysql/
+    command: mysqld --init-file="/tmp/mysql/schema.sql"
 
-web:
-  image: nginx
-  volumes:
-    - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
-    - ./docker/nginx/sites-enabled:/etc/nginx/sites-enabled
-    - ./wordpress:/var/www/html
-  ports:
-    - "9999:80"
-  links:
-    - php
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+     - PMA_ARBITRARY=1
+    ports:
+      - "9001:80"
+    links:
+      - db
+    depends_on:
+      - db
+
+  php:
+    build: ./docker/php
+
+    volumes:
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+      - ./wordpress:/var/www/html:rw
+    links:
+      - db
+    depends_on:
+      - db
+
+  web:
+    image: nginx
+    volumes:
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/nginx/sites-enabled:/etc/nginx/sites-enabled
+      - ./wordpress:/var/www/html:rw
+    ports:
+      - "9999:80"
+    links:
+      - php
+    depends_on:
+      - php
+
+volumes:
+  db_files:
