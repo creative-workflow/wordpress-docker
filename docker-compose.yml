@@ -6,8 +6,6 @@ services:
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
       - MYSQL_DATABASE=wordpress
-    ports:
-      - "3306:3306"
     volumes:
       - ./docker/db:/tmp/mysql
       - db_files:/var/lib/mysql/
