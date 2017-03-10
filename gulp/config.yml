@@ -1,4 +1,4 @@
-themePath: './wordpress/wp-content/themes/twentysixteen'
+themePath: 'wordpress/wp-content/themes/twentysixteen'
 browsersync:
   port: 3000
   open: "external"
