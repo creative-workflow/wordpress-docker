@@ -1,13 +1,17 @@
-gulp   = require 'gulp'
-sass   = require 'gulp-sass'
-reload = require('browser-sync').reload
-config = require './config'
+gulp       = require 'gulp'
+sass       = require 'gulp-sass'
+reload     = require('browser-sync').reload
+config     = require './config'
+sourcemaps = require 'gulp-sourcemaps'
 
 gulp.task 'sass', ->
-  gulp.src([config.themePath + '/sass/*.sass',
-            config.themePath + '/sass/*.scss'])
+  gulp.src([config.themePath + '/sass/*.sass'])
+      .pipe(
+        sourcemaps.init())
       .pipe(
           sass())
+      .pipe(
+          sourcemaps.write())
       .pipe(
           gulp.dest(config.themePath))
       .pipe(
