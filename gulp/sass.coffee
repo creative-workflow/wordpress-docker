@@ -11,7 +11,7 @@ gulp.task 'sass', ->
       .pipe(
           sass())
       .pipe(
-          sourcemaps.write())
+          sourcemaps.write('./maps'))
       .pipe(
           gulp.dest(config.themePath))
       .pipe(

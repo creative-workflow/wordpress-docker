@@ -11,6 +11,6 @@ gulp.task 'coffee', ->
       .pipe(
           coffee({bare: true}).on('error', gutil.log))
       .pipe(
-          sourcemaps.write())
+          sourcemaps.write('./maps'))
       .pipe(
           gulp.dest(config.themePath + '/js'))
