@@ -3,9 +3,9 @@ You will get a running wordpress instance based on the latest wordpress source, 
 
 ## Install the following dependencies
   * [Docker](https://docs.docker.com/engine/installation)
+  * [Docker Compose](https://docs.docker.com/compose/install/)
   * [GIT](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
   * [nodeJs](https://nodejs.org) (if you want to use browser-sync or gulp tasks)
-  * [Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Wordpress up and running in 10 minutes
 
