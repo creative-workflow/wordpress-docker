@@ -48,8 +48,8 @@ Note: *With Ctrl+C you can stop the docker container in the terminal.*
 Open a new terminal inside your project folder and run:
 
 ```
-npm install -g gulp coffee-script
-npm install --cached
+npm install -g gulp gulp-cli yarn coffee-script
+yarn install
 ```
 
 Note: *If you have access errors prepend the commands with `sudo`.*
