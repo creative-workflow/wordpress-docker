@@ -80,7 +80,7 @@ You can share a database dump within your repo, so you can sync development with
 `./scripts/db-import.sh`
 
 #### using phpmyadmin
-Have a look at step 4 to finde out where your phpmyadmin instance is accessible via web browser. Login in with:
+Open http://localhost:9001 web browser. Login in with:. Login in with:
   * host: *leave blank*
   * user: root
   * password: *leave blank*

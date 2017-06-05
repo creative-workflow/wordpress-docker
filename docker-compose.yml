@@ -14,7 +14,11 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
-     - PMA_ARBITRARY=1
+      PMA_ARBITRARY: 1
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: ''
     ports:
       - "9001:80"
     links:
