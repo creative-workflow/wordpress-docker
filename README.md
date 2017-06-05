@@ -14,7 +14,7 @@ You will get a running wordpress instance based on the latest wordpress source, 
 
 
 #### 2. Copy source files from this repo
-`git clone --branch=master git@github.com:creative-workflow/wordpress-docker.git . && rm -rf ./.git*`
+`git clone --branch=master https://github.com/creative-workflow/wordpress-docker.git . && rm -rf ./.git*`
 
 
 #### 3. Download a fresh wordpress copy and copy our specific wp-config.php
