@@ -3,10 +3,17 @@ FROM php:5-fpm
 MAINTAINER Tom Hanoldt<tom@creative-workflow.berlin>
 
 RUN apt-get update && apt-get install -y php5-mysqlnd \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libmcrypt-dev \
+    libpng12-dev \
     && docker-php-ext-install mysql \
     && docker-php-ext-enable mysql \
     && docker-php-ext-install mysqli \
     && docker-php-ext-enable mysqli \
+    && docker-php-ext-install -j$(nproc) iconv mcrypt \
+    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install opcache \
     && docker-php-ext-enable opcache
 
